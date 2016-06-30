@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630101220) do
+ActiveRecord::Schema.define(version: 20160630102540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "deals", force: :cascade do |t|
+    t.string   "name"
+    t.string   "title"
+    t.text     "short_description"
+    t.text     "full_description"
+    t.string   "picture"
+    t.float    "original_price"
+    t.float    "discounted_price"
+    t.float    "discount"
+    t.string   "deal_type"
+    t.string   "brand"
+    t.string   "sneaker_model"
+    t.string   "seller_url"
+    t.string   "sneaker_category"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
